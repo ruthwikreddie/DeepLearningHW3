@@ -39,7 +39,7 @@ def get_data(path):
     with open(path, 'r') as f:
         raw_data = json.load(f)
     return raw_data
-path = '/content/spoken_train-v1.1.json' # path to the JSON file in your mounted Google Drive
+path = '/content/spoken_trn-v1.1.json' # path to the JSON file in your mounted Google Drive
 data = get_data(path)
 
 num_of_questions = 0
@@ -67,12 +67,12 @@ def get_data(path):
                     answers.append(answer)
     return num_q, num_pos, num_imp, contexts, questions, answers
 
-num_q, num_pos, num_imp, train_contexts, train_questions, train_answers = get_data('spoken_train-v1.1.json')
+num_q, num_pos, num_imp, train_contexts, train_questions, train_answers = get_data('spoken_trn-v1.1.json')
 num_of_questions  = num_q
 num_of_possible = num_pos
 num_of_impossible  = num_imp
 
-num_q, num_pos, num_imp, valid_contexts, valid_questions, valid_answers = get_data('spoken_test-v1.1.json')
+num_q, num_pos, num_imp, valid_contexts, valid_questions, valid_answers = get_data('spoken_tst-v1.1.json')
 print(len(valid_contexts))
 print(len(valid_questions))
 print(len(valid_answers))
